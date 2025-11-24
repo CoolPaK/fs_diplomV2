@@ -14,10 +14,16 @@ Laravel
 ## Инструкция
 
 1. Сделать git clone данного репозитория
-2. Изменить название файла "env.example" на "env" в директории проекта
-3. В папке с проектом запустить команду composer install и composer update
-4. Выполнить php artisan key:generate
-5. Запустить сервер php artisan serve
+2. Изменить название файла "env.example" на ".env" в директории проекта
+3. Настроить подключение к базе данных в файле .env
+    ```env
+   DB_CONNECTION=sqlite
+   DB_DATABASE=/absolute/path/to/database.sqlite
+   Создайте файл: touch database/database.sqlite
+4. В папке с проектом запустить команду: composer install
+5. Выполнить php artisan key:generate
+6. Выполнить миграции базы данных: php artisan migrate
+7. Запустить сервер php artisan serve
 
 ## Возможности для клиента
 
@@ -26,7 +32,7 @@ Laravel
 
 ## Возможности для администратора
 
-- Создавать и настраивать залы, фильмы, расписание сеаснов
+- Создавать и настраивать залы, фильмы, расписание сеансов
 
 ## Доступы
 

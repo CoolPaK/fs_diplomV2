@@ -24,13 +24,14 @@ class HallController extends Controller
     {
         $halls = Hall::with('seances', 'seats')->join('hall_sizes', 'hall_sizes.id', '=', 'halls.id')->get();
         $movie = Movie::all();
+        $movies = Movie::all();
         $movieShow = MovieShow::all();
 
         if (Auth::user()->is_admin !== '1') {
             return redirect('/index');
         }
         return view('admin.admin', ['seats' => $this->seats($halls), 'hallSeances' => $this->hallSeances($halls, $movie), 'hallIsActive' => $this->activeHall($halls, $movieShow)
-        ], compact('halls'));
+        ], compact('halls', 'movies'));
     }
 
     /**

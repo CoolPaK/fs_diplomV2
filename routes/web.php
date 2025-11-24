@@ -59,17 +59,3 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post('/start_of_sales', [HallController::class, 'setActive'])->name('start_of_sales');
 });
 
-//public function index()
-//{
-//    $movies = Movie::all();
-//
-//    return view('/', compact('movies'));
-//}
-
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
-
-
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

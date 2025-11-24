@@ -27,12 +27,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
 {
-     $halls = Hall::all();
-     $movies = Movie::all();
-     $hallSize = HallSize::all();
-
-     View::share('halls', $halls);
-     View::share('movies', $movies);
-     View::share('hallSize', $hallSize);
+     
 }
 }

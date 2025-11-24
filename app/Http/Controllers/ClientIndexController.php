@@ -12,7 +12,7 @@ class ClientIndexController extends Controller
     {
         $movies = Movie::all();
         $halls = Hall::where('is_active', 1)->with('seances')->get();
-        return view('client.index', ['hallsShow' => $this->movieShow($halls, $movies), 'weekDayRus' => $this->getWeekDayRus()], compact('halls'));
+        return view('client.index', ['hallsShow' => $this->movieShow($halls, $movies), 'weekDayRus' => $this->getWeekDayRus()], compact('halls', 'movies'));
     }
 
     public function movieShow($halls, $movies) {
